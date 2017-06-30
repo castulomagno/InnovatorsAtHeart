@@ -1,0 +1,36 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core">
+	<Dialog id="updateDialog" title="{i18n>updateHeader}"  contentWidth="96%" contentHeight="96%" stretch="true" >
+		<content>
+			<form:SimpleForm editable="true">
+				<Label text="{i18n>personPhone}" />
+				<Text id="input11" />
+				<Label text = "{i18n>personName}" class = "sapUiSmallMarginTop sapUiTinyMarginBottom" tooltip = "People Name"/>
+				<MaskInput id="input12" mask="********************" placeholderSymbol=" " placeholder="Insert Name ..." >
+					<rules>
+						<MaskInputRule />
+					</rules>
+				</MaskInput>				
+				<Label text = "{i18n>personLastName}" class = "sapUiSmallMarginTop sapUiTinyMarginBottom" tooltip = "People Last Name"/>
+				<MaskInput id="input13" mask="********************" placeholderSymbol=" " placeholder="Insert Last Name ...">
+					<rules>
+						<MaskInputRule />
+					</rules>
+				</MaskInput>				
+				<Label text = "{i18n>personEmail}" class = "sapUiSmallMarginTop sapUiTinyMarginBottom" tooltip = "People Email"/>
+				<MaskInput id="input14" mask = "CCCCCCCCCCCCCCC@people.com" placeholderSymbol = " " placeholder = "Insert Email ...">
+					<rules>
+						<MaskInputRule maskFormatSymbol = "C" regex = "[a-zA-Z0-9]"/>
+					</rules>
+				</MaskInput>
+			</form:SimpleForm>
+			<core:InvisibleText id="myModel" />
+		</content>
+		<beginButton>
+			<Button type="Emphasized" text="Save" press="onUpdate" />
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="onCloseDialog" type="Reject" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
