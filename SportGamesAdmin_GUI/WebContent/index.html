@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<title>Sport Games Admin Platform</title>
+<script id="sap-ui-bootstrap" 
+	src="resources/sap-ui-core.js"
+	data-sap-ui-theme="sap_belize" 
+	data-sap-ui-libs="sap.m"
+	data-sap-ui-compatVersion="edge" 
+	data-sap-ui-preload="async"
+	data-sap-ui-resourceroots='{"sport.games.admin.ui5": "./"}'>
+	
+</script>
+<script>
+	sap.ui.getCore().attachInit(function() {
+		new sap.ui.core.ComponentContainer({
+			name : "sport.games.admin.ui5"
+		}).placeAt("content");
+	});
+</script>
+</head>
+<body class="sapUiBody" id="content">
+</body>
+</html>
