@@ -1,0 +1,99 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" controllerName="e2e.ui5.controller.CRUD">
+	<App>
+		<pages>
+			<Page title="CRUD view with OpenUI5">
+				<content>
+					<IconTabBar id="idTopLevelIconTabBar">
+						<items>
+							<IconTabFilter id="Tab1" text="{i18n>cContent}" >
+								<content>
+									<l:Grid vSpacing="2" defaultSpan="XL12 L12 M12 S12">
+										<VBox>
+											<f:SimpleForm title="{i18n>formAdd}">
+												<Label text = "{i18n>personPhone}" class = "sapUiSmallMarginTop sapUiTinyMarginBottom" tooltip = "People Phone Number"/>
+												<MaskInput id="input01" mask="9999999999" placeholderSymbol=" " placeholder="Insert Phone Number ..." />
+												
+												<Label text = "{i18n>personName}" class = "sapUiSmallMarginTop sapUiTinyMarginBottom" tooltip = "People Name"/>
+												<MaskInput id="input02" mask="********************" placeholderSymbol=" " placeholder="Insert Name ..." >
+													<rules>
+														<MaskInputRule />
+													</rules>
+												</MaskInput>
+												
+												<Label text = "{i18n>personLastName}" class = "sapUiSmallMarginTop sapUiTinyMarginBottom" tooltip = "People Last Name"/>
+												<MaskInput id="input03" mask="********************" placeholderSymbol=" " placeholder="Insert Last Name ...">
+													<rules>
+														<MaskInputRule />
+													</rules>
+												</MaskInput>
+												
+												<Label text = "{i18n>personEmail}" class = "sapUiSmallMarginTop sapUiTinyMarginBottom" tooltip = "People Email"/>
+												<MaskInput id="input04" mask = "CCCCCCCCCCCCCCC@people.com" placeholderSymbol = " " placeholder = "Insert Email ...">
+													<rules>
+														<MaskInputRule maskFormatSymbol = "C" regex = "[a-zA-Z0-9]"/>
+													</rules>
+												</MaskInput>
+												
+												<Label text = "" class = "sapUiSmallMarginTop sapUiTinyMarginBottom" tooltip = ""/>
+												<Button icon="sap-icon://save" press="onAdd" class="sapUiSmallMarginBottom" width="250px" />
+											</f:SimpleForm>
+										</VBox>
+									</l:Grid>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter id="Tab2" text="{i18n>rudContent}" >
+								<content>
+									<Table id="table1" headerText="{i18n>lblRead}" items="{/Peoples}">
+										<columns>
+											<Column popinDisplay="Inline" minScreenWidth="Tablet" demandPopin="true">
+												<header>
+													<Label text="{i18n>personPhone}"></Label>
+												</header>
+											</Column>
+											<Column popinDisplay="Inline" minScreenWidth="Tablet" demandPopin="true">
+												<header>
+													<Label text="{i18n>personName}"></Label>
+												</header>
+											</Column>
+											<Column popinDisplay="Inline" minScreenWidth="Tablet" demandPopin="true">
+												<header>
+													<Label text="{i18n>personLastName}"></Label>
+												</header>
+											</Column>
+											<Column popinDisplay="Inline" minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+												<header>
+													<Label text="{i18n>personEmail}"></Label>
+												</header>
+											</Column>
+											<Column hAlign="Center">
+												<header> 
+													<Label text="{i18n>lblUpdate}"></Label>
+												</header>
+											</Column>
+											<Column hAlign="Center">
+												<header>
+													<Label text="{i18n>lblDelete}"></Label>
+												</header>
+											</Column>
+										</columns>
+										<ColumnListItem type="action">
+											<cells>
+												<Text id="text1" text="{Phone}" />
+												<Text id="text2" text="{Name}" />
+												<Text id="text3" text="{LastName}" />
+												<Text id="text4" text="{Email}" />
+												<Button icon="sap-icon://user-edit" press="onOpenDialog"	class="sapUiSmallMarginBottom" />
+												<Button icon="sap-icon://delete" 	press="onDelete" 		class="sapUiSmallMarginBottom" />
+											</cells>
+										</ColumnListItem>
+									</Table>
+								</content>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
